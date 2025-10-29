@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="53.22" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="SurveyMonkey Homepage" name="Verify non-interactive elements are not clickable" time="52.87">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on the SurveyMonkey homepage..............................passed
+When the user tries to click non-interactive elements.......................passed
+Then verify nothing happens.................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
