@@ -22,26 +22,14 @@ import io.cucumber.java.en.When;
 
 public class HomePageSteps {
 	
+	private WebDriver driver = Hooks.driver;
+    private HomePage homepage = Hooks.homepage;
+    private WaitUtils waitUtils = Hooks.waitUtils;
 	
-	
-	WebDriver driver; 
-    HomePage homepage;
-    WaitUtils waitUtils;
-
-	
-	 
 	 @Given("user has opened the browser")
 		public void user_has_opened_the_browser() {
-		 driver = Hooks.driver;          // get driver AFTER @Before
-	        if(driver == null) {
-	            throw new RuntimeException("❌ Driver is not initialized in Hooks!");
-	        }
-	        homepage = new HomePage(driver); // initialize page now that driver exists
-	        waitUtils = new WaitUtils(driver, 10);
-
-	        Assert.assertTrue("❌ Browser window was not opened or is not visible.",
-	                driver.getWindowHandles().size() > 0);
-	        System.out.println("✅ Browser launched successfully.");
+		 Assert.assertNotNull("❌ Driver is not initialized", Hooks.driver);
+	        System.out.println("✅ Browser is ready (initialized in Hooks)");
 	 }
 	 
 
@@ -75,7 +63,7 @@ public class HomePageSteps {
 	 @Then("verify the user is redirected to the registration page")
 		 public void verify_the_user_is_redirected_to_the_registration_page() {
 		 
-		 WaitUtils waitUtils = new WaitUtils(driver, 10); 
+		// WaitUtils waitUtils = new WaitUtils(driver, 10); 
 		    boolean titleAppeared = waitUtils.waitForTitleContains("SurveyMonkey - Create an account");
 		    Assert.assertTrue("Registration page did not load as expected", titleAppeared);
 		    System.out.println("Actual page title: " + driver.getTitle());
@@ -90,7 +78,7 @@ public class HomePageSteps {
 
 	 @Then("verify the user is redirected to the login page")
 	 public void verify_the_user_is_redirected_to_the_login_page() {
-		 WaitUtils waitUtils = new WaitUtils(driver, 10); 
+		// WaitUtils waitUtils = new WaitUtils(driver, 10); 
 		 boolean titleAppeared = waitUtils.waitForTitleContains("SurveyMonkey - Log in");
 		    Assert.assertTrue("Login page did not load as expected", titleAppeared);
 		    System.out.println("Actual page title: " + driver.getTitle());

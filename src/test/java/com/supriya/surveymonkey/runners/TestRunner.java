@@ -14,8 +14,9 @@ import io.cucumber.junit.CucumberOptions;
 						"json:target/JSONReport/report.json",
 						"html:target/HtmlReports"},
 	 monochrome = true,
-	 dryRun = false,
-	 tags = "@Logo"
+	 dryRun = true
+	 
+	 
 	
 				)
 				

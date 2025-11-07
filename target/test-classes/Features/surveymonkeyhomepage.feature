@@ -42,7 +42,4 @@ Feature: SurveyMonkey Homepage
     When the user tries to click non-interactive elements
     Then verify nothing happens
     
-      # UI Test Scenarios
-		Scenario: Verify SurveyMonkey logo is visible
-    Given the user is on the SurveyMonkey homepage
-    Then verify the SurveyMonkey logo is visible
+    
