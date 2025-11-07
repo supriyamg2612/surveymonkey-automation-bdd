@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="319.023" tests="7" skipped="0" failures="0" errors="0">
+<testcase classname="SurveyMonkey Homepage" name="Verify Home Page loads successfully" time="17.152">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+When the user navigates to Home Page........................................passed
+Then the page should load without errors....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="SurveyMonkey Homepage" name="Verify navigation to SignUp page" time="19.246">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on the SurveyMonkey homepage..............................passed
+When the user clicks the SignUp button......................................passed
+Then verify the user is redirected to the registration page.................passed
+]]></system-out>
+</testcase>
+<testcase classname="SurveyMonkey Homepage" name="Verify navigation to Login page" time="16.621">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on the SurveyMonkey homepage..............................passed
+When the user clicks the Login button.......................................passed
+Then verify the user is redirected to the login page........................passed
+]]></system-out>
+</testcase>
+<testcase classname="SurveyMonkey Homepage" name="Verify clicking the SurveyMonkey logo redirects to homepage" time="20.8">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on any page of the website................................passed
+When the user clicks the SurveyMonkey logo..................................passed
+Then verify the user is redirected to the homepage..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="SurveyMonkey Homepage" name="Verify homepage has no broken links" time="137.628">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on the SurveyMonkey homepage..............................passed
+Then verify no broken pages or 404 errors appear............................passed
+]]></system-out>
+</testcase>
+<testcase classname="SurveyMonkey Homepage" name="Verify non-interactive elements are not clickable" time="59.376">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+Given the user is on the SurveyMonkey homepage..............................passed
+When the user tries to click non-interactive elements.......................passed
+Then verify nothing happens.................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Account Registration and Compliance" name="Account creation using email (valid)" time="47.593">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+And the user navigates to the Sign Up page..................................passed
+When the user enters a valid SignUp email from config.......................passed
+And the user agrees to the Terms of Use and Privacy Notice..................passed
+And the user clicks on the "Next" button....................................passed
+Then the password creation page should be displayed in the same window......passed
+When the user enters a valid SignUp password from config in the Password field.passed
+And the user re-enters the same SignUp password from config in the Confirm Password field.passed
+And the user clicks on the "Create Account" button..........................passed
+Then the user should be redirected to the page "https://www.surveymonkey.com/home".passed
+And the title of the page should be "Welcome to SurveyMonkey!"..............passed
+]]></system-out>
+</testcase>
+</testsuite>

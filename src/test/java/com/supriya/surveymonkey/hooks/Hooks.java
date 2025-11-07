@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.supriya.surveymonkey.pages.HomePage;
+import com.supriya.surveymonkey.pages.LoginPage;
 import com.supriya.surveymonkey.pages.SignUpPage;
 import com.supriya.surveymonkey.utilities.DriverUtility;
 import com.supriya.surveymonkey.utilities.ScreenshotUtils;
@@ -20,6 +21,7 @@ public class Hooks {
     public static HomePage homepage;
     public static SignUpPage signUpPage ;
     public static WaitUtils waitUtils;	
+    public static LoginPage loginPage ;
 	@Before
     public void setup() throws Exception {
 		driver = DriverUtility.getDriver();
@@ -28,6 +30,7 @@ public class Hooks {
         homepage = new HomePage(driver);
         waitUtils = new WaitUtils(driver, 10);
         signUpPage =new SignUpPage(driver);
+        loginPage= new LoginPage(driver);
 
         if (driver == null) {
             throw new RuntimeException("❌ Driver is not initialized in Hooks!");
