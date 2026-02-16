@@ -28,11 +28,22 @@ public class DriverUtility {
                  WebDriverManager.chromedriver().setup();
 
                  ChromeOptions options = new ChromeOptions();
+                 
+
+                 String headless = System.getProperty("headless");
+
+                 if ("true".equalsIgnoreCase(headless)) {
+                     System.out.println("Running in HEADLESS mode (Jenkins)");
+                     options.addArguments("--headless=new");
+                     options.addArguments("--no-sandbox");
+                     options.addArguments("--disable-dev-shm-usage");
+                 } else {
+                     System.out.println("Running in NORMAL mode (Local)");
+                 }
 
                  options.addArguments("--disable-gpu");
                  options.addArguments("--window-size=1920,1080");
-                 options.addArguments("--no-sandbox");
-                 options.addArguments("--disable-dev-shm-usage");
+
                  driver = new ChromeDriver(options);
                  break;
              case "firefox":
