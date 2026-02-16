@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="319.023" tests="7" skipped="0" failures="0" errors="0">
-<testcase classname="SurveyMonkey Homepage" name="Verify Home Page loads successfully" time="17.152">
+<testsuite name="Cucumber" time="253.017" tests="8" skipped="0" failures="1" errors="0">
+<testcase classname="SurveyMonkey Homepage" name="Verify Home Page loads successfully" time="15.886">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 When the user navigates to Home Page........................................passed
 Then the page should load without errors....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SurveyMonkey Homepage" name="Verify navigation to SignUp page" time="19.246">
+<testcase classname="SurveyMonkey Homepage" name="Verify navigation to SignUp page" time="13.411">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 Given the user is on the SurveyMonkey homepage..............................passed
@@ -15,7 +15,7 @@ When the user clicks the SignUp button......................................pass
 Then verify the user is redirected to the registration page.................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SurveyMonkey Homepage" name="Verify navigation to Login page" time="16.621">
+<testcase classname="SurveyMonkey Homepage" name="Verify navigation to Login page" time="12.944">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 Given the user is on the SurveyMonkey homepage..............................passed
@@ -23,7 +23,7 @@ When the user clicks the Login button.......................................pass
 Then verify the user is redirected to the login page........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SurveyMonkey Homepage" name="Verify clicking the SurveyMonkey logo redirects to homepage" time="20.8">
+<testcase classname="SurveyMonkey Homepage" name="Verify clicking the SurveyMonkey logo redirects to homepage" time="19.018">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 Given the user is on any page of the website................................passed
@@ -31,14 +31,14 @@ When the user clicks the SurveyMonkey logo..................................pass
 Then verify the user is redirected to the homepage..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SurveyMonkey Homepage" name="Verify homepage has no broken links" time="137.628">
+<testcase classname="SurveyMonkey Homepage" name="Verify homepage has no broken links" time="104.61">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 Given the user is on the SurveyMonkey homepage..............................passed
 Then verify no broken pages or 404 errors appear............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SurveyMonkey Homepage" name="Verify non-interactive elements are not clickable" time="59.376">
+<testcase classname="SurveyMonkey Homepage" name="Verify non-interactive elements are not clickable" time="36.698">
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 Given the user is on the SurveyMonkey homepage..............................passed
@@ -46,19 +46,80 @@ When the user tries to click non-interactive elements.......................pass
 Then verify nothing happens.................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Account Registration and Compliance" name="Account creation using email (valid)" time="47.593">
+<testcase classname="SurveyMonkey Login" name="Successful login with valid credentials" time="24.079">
+<system-out><![CDATA[
+Given user has opened the browser...........................................passed
+And the user navigates to the Login Page....................................passed
+When the user enters a valid login email from configuration file............passed
+And the user clicks on the "Next" button from the login page................passed
+Then the user should be navigated to the password entry page................passed
+When the user enters a valid login password from config in the Password field.passed
+And the user clicks on the "Login" button from the login page...............passed
+And the title of the page should be "Home Page - Projects" this.............passed
+]]></system-out>
+</testcase>
+<testcase classname="Account Registration and Compliance" name="Account creation using email (valid)" time="25.886">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[text() = 'Next']&quot;}
+  (Session info: chrome=145.0.7632.76)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Ameyas-MBP.fritz.box', ip: 'fdde:1c74:a112:0:8c4:828a:607b:550c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.76, chrome: {chromedriverVersion: 145.0.7632.76 (ee36f024f43a..., userDataDir: /var/folders/7g/3hglgn694qj...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52442}, goog:processID: 7705, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b889847e9f2c9601d2dbfdd692cd930
+*** Element info: {Using=xpath, value=//button[text() = 'Next']}">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Next']"}
+  (Session info: chrome=145.0.7632.76)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Ameyas-MBP.fritz.box', ip: 'fdde:1c74:a112:0:8c4:828a:607b:550c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.76, chrome: {chromedriverVersion: 145.0.7632.76 (ee36f024f43a..., userDataDir: /var/folders/7g/3hglgn694qj...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52442}, goog:processID: 7705, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b889847e9f2c9601d2dbfdd692cd930
+*** Element info: {Using=xpath, value=//button[text() = 'Next']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at com.supriya.surveymonkey.pages.SignUpPage.clickNextButton(SignUpPage.java:77)
+	at com.supriya.surveymonkey.stepdefinitions.SignUpPageSteps.the_user_clicks_on_the_button(SignUpPageSteps.java:53)
+	at ✽.the user clicks on the "Next" button(file:///Users/supriya/eclipse-workspace/AdvancedSelenium-java/surveymonkey-automation-bdd/src/test/resources/Features/surveymonkeyregistration.feature:22)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user has opened the browser...........................................passed
 And the user navigates to the Sign Up page..................................passed
 When the user enters a valid SignUp email from config.......................passed
 And the user agrees to the Terms of Use and Privacy Notice..................passed
-And the user clicks on the "Next" button....................................passed
-Then the password creation page should be displayed in the same window......passed
-When the user enters a valid SignUp password from config in the Password field.passed
-And the user re-enters the same SignUp password from config in the Confirm Password field.passed
-And the user clicks on the "Create Account" button..........................passed
-Then the user should be redirected to the page "https://www.surveymonkey.com/home".passed
-And the title of the page should be "Welcome to SurveyMonkey!"..............passed
+And the user clicks on the "Next" button....................................failed
+Then the password creation page should be displayed in the same window......skipped
+When the user enters a valid SignUp password from config in the Password field.skipped
+And the user re-enters the same SignUp password from config in the Confirm Password field.skipped
+And the user clicks on the "Create Account" button..........................skipped
+Then the user should be redirected to the page "https://www.surveymonkey.com/home".skipped
+And the title of the page should be "Welcome to SurveyMonkey!"..............skipped
 ]]></system-out>
 </testcase>
 </testsuite>

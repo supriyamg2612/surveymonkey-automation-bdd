@@ -56,9 +56,10 @@ public class LoginPage {
     	
     }
     
-    public void loginToApplication(String email,String password ) {
+    public DashboardPage validLogin(String email,String password ) {
     	 enterEmail(email);
 	     enterPassword(password);
+		return new DashboardPage(driver);
     }
     
     

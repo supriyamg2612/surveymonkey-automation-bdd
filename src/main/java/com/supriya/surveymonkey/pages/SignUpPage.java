@@ -30,7 +30,7 @@ public class SignUpPage {
     @FindBy(xpath   = "//input[@id='privacy-checkbox']")
     private WebElement promotionsCheckbox;
     
-    @FindBy(xpath  =  "//button[text() = 'Next']")
+    @FindBy(xpath  =  "//button[text() = 'Continue with email']")
 	private WebElement nextButtonElement;
     
     @FindBy(xpath = "//button[text() = 'Create account']")
